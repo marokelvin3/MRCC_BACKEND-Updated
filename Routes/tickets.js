@@ -1,6 +1,6 @@
 const express = require("express");
 const db = require("../db");
-const { isAuthenticated } = require("../middleware/authMiddleware");
+const { isAuthenticated } = require("../middleware/middleware");
 
 const router = express.Router();
 

@@ -3,8 +3,8 @@ const session = require("express-session");
 const SQLiteStore = require("connect-sqlite3")(session);
 const path = require("path");
 
-const authRoutes = require("./routes/auth");
-const ticketRoutes = require("./routes/tickets");
+const authRoutes = require("./Routes/auth");
+const ticketRoutes = require("./Routes/tickets");
 
 const app = express();
 const cors = require('cors');
