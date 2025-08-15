@@ -7,11 +7,19 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// CORS setup — allow Netlify frontend
+app.use(cors({
+    origin: "https://lighthearted-crisp-76ee3c.netlify.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
+}));
+
 app.use(express.json());
 
 app.get("/", (req, res) => res.json({ message: "Support WebApp API" }));
 
+// Routes
 app.use("/auth", require("./auth"));
 app.use("/tickets", require("./tickets"));
 
